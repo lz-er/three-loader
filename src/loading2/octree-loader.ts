@@ -248,7 +248,7 @@ export class NodeLoader {
 		const last = first + hierarchyByteSize - BigInt(1);
 
 		const headers = { Range: `bytes=${first}-${last}` };
-		const response = await fetch(hierarchyUrl, { headers });
+		const response = await fetch(hierarchyUrl, { headers, credentials: 'include' });
 
 		const buffer = await response.arrayBuffer();
 
